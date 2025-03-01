@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* Css général */
+:root {
+    --rose: #ea759f;
+    --jaune: #ffcc00;
+    --vert: #32a842;
+    --noir: #000000;
+    --cream: #f8f4eb;
+}
+html {
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+   font-family: "Noto Serif Display", serif;
+    background-color: white;
+}
+p{
+    font-family: "Playfair Display", serif;
+}
+
+
+/* CSS accueil */
+.accueil{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--noir);
+    background-image: url("./image/Accueil.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.btnCommencez{
+    font-size: 1.2rem;
+    margin: 20px; 
+    padding : 20px; 
+    border-radius: 20px;
+    background-color: var(--rose);
+    color: var(--cream);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.2s ease-in-out;
+    border: none;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+} 
+.btnCommencez:hover{
+    background-color: var(--cream);
+    color: var(--rose);
+}
+
+/* Css section presentation */
+.conteneurPresentation{
+    height: 100vh; 
+    overflow: hidden; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.fiches{
+    width: 90vw; 
+    height: 80vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.fiche{
+    position: absolute;
+    width: 90%; 
+    height: 90%; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    border-radius: 50px;
+    font-size: 24px; 
+    font-weight: bold; color: white;
+    opacity: 0; 
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    color: var(--noir);
+    background-color: var(--cream);
+    
+}
+.fiche:nth-child(1) { 
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.fiche:nth-child(1) h1{
+ font-size: 5rem;
+ margin: 0;
+}
+.fiche:nth-child(1) h3{
+    font-size: 1.2rem;
+   }
+.fiche:nth-child(1) p{
+    text-align: center;
+    width: 50%;
+    font-size:1.5rem;
+    font-weight: 200;
+}
+.conteneurObjectif{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+}
+.cercleReussi{
+    width: 200px;
+    height: 200px;
+    /* border: solid; */
+    background-image: url("./image/reussi.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.cercleRate{
+    width: 200px;
+    height: 200px;
+    /* border: solid; */
+    background-image: url("./image/rate.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.objectif{
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    /* border: solid; */
+    align-items: center;
+}
+.objectif h3{
+    text-align: center;
+    font-family: "Playfair Display", serif;
+}
+
+
+
+.fiche:nth-child(2) { 
+ 
+}
+.fiche:nth-child(2) h1{ 
+    font-size: 5rem;
+    padding-left:50px;
+
+}
+.fiche:nth-child(2) ul{ 
+    width: 55%;
+    height: 70%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-end;
+    align-items: stretch; 
+}
+.fiche:nth-child(2) li{ 
+    color: var(--rose);
+ }
+.fiche:nth-child(2) li p{ 
+   text-align:justify;
+   padding:10px;
+   font-weight: 300;
+   font-size: 1.5rem;
+   color: var(--noir);
+}
+
+
+
+.fiche:nth-child(3) { 
+    font-size: 5rem;
+    font-weight: 400;
+    padding-left:50px;
+    background-image: url("./image/survole.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.fiche:nth-child(4) { 
+    font-size: 5rem;
+    font-weight: 400;
+    padding-left:50px;
+    background-image: url("./image/IdentiteVisuelle.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.fiche:nth-child(4) { 
+    font-size: 5rem;
+    font-weight: 400;
+    padding-left:50px;
+    background-image: url("./image/IdentiteVisuelle.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+.fiche:nth-child(6) { 
+    background-image: url("./image/Spline.jpg");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+.fiche:nth-child(6) a{ 
+    cursor: pointer;
+    font-size: 5rem;
+    color:var(--cream);
+    text-shadow: -1px 2px 6px rgba(132, 132, 132, 1);
+    padding-left:50px;
+    text-decoration: none;
+}
+
+
+.fiche:nth-child(8) a{ 
+    cursor: pointer;
+    font-size: 5rem;
+    color:var(--noir);
+    padding-left:50px;
+    text-decoration: none;
+}
+
+
+.fiche:nth-child(10){ 
+    font-size: 3rem;
+}
+.texteCode{ 
+   display: flex;
+   flex-direction: column;
+   width: 40%;
+   padding: 20px;
+}
+.texteCode h3{ 
+    font-size: 3rem;
+    
+}
+.texteCode p {
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.imgCode{
+    width:50%;
+    height: 80%;
+    background-image: url("./image/code.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.fiche:nth-child(11) { 
+    display: flex;
+    background-image: url("./image/TitrePointFort.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.fiche:nth-child(11) div { 
+    width: 50%;
+}
+.fiche:nth-child(11) ul { 
+    width: 45%;
+    padding: 10px;
+}
+.fiche:nth-child(11) li { 
+   font-weight: 100;
+   font-size:2rem;
+}
+.fiche:nth-child(11) p { 
+    color: var(--noir); 
+    
+}
+.fiche:nth-child(11) .positif { 
+    color: var(--vert);
+ }
+ .fiche:nth-child(11) .negatif { 
+    color: var(--rose);
+ }
+ 
+ .fiche:nth-child(12) { 
+    display: flex;
+    background-image: url("./image/fin.png");
+    background-size: contain; 
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+.activeFiche { 
+    opacity: 1; 
+    transform: translateY(0); 
+    z-index: 1;
+}
+
+/* Css pour les fleche */
+.fleche {
+    z-index: 1;
+    position: absolute; 
+    top: 50%; transform: 
+    translateY(-50%); 
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border: none; 
+    font-size: 24px; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+}
+.fleche-gauche { 
+    left: 10px;
+ }
+
+.fleche-droite { 
+    right: 10px; 
+}

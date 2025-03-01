@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation-Sarov</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="accueil"> 
+        
+        <!-- Le bouton qui scroll à la présentation -->
+        <button class="btnCommencez" onclick="ScrollPresentation()">Commencez la présentation</button>
+    </section>
+   <!-- Section de la partie présentation -->
+    <section class="conteneurPresentation" id="Presentation">
+        <button class="fleche fleche-gauche" onclick="precedenteFiche()">&#10094;</button>
+        <div class="fiches">
+            <div class="fiche"> 
+                <h1>Objectifs</h1>
+                <p>Dans le cadre de mon projet, je devais créer <strong>une identité visuelle</strong> pour une toute <strong>nouvelle marque de parfum.</strong> Cela incluait non seulement la <strong>conception tridimensionnelle du parfum</strong>, mais aussi celle <strong>d’un site web</strong> captivant, qui incarnerait pleinement l’image de notre marque, tout en proposant une <strong>expérience immersive</strong> à nos utilisateurs. </p>
+                <div class="conteneurObjectif">
+                    <div class="objectif">
+                        <div class="cercleReussi"></div>
+                        <h3>Création d'une image de marque</h3>
+                    </div>
+
+                    <div class="objectif">
+                        <div class="cercleReussi"></div>
+                        <h3>Création d'un produit en 3D</h3>
+                    </div>
+                    
+                    <div class="objectif Rate">
+                        <div class="cercleRate"></div>
+                        <h3>Développement d'un site interatif & immersive</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="fiche"> 
+                <h1>  
+                    Difficultés rencontrées
+                </h1>
+                <ul>
+                    <li>
+                        <p>Sous-estimation des délais et modifier mes plans en cours de route.</p>
+                    </li>
+                    <li>
+                        <p>Restrictions en matière de compatibilité entre Figma et Webflow, entrainant des limites dans mon processus créatif et ma liberté de ma création.</p>
+                    </li>
+                    <li>
+                        <p>Maque de connaissances théoriques.</p>
+                    </li>
+                    <li>
+                        <p>Les liens d’ancrage spline rencontrent souvent des problèmes.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fiche"></div>
+            <div class="fiche"> </div>
+
+            <div class="fiche"> 
+                <video controls width="100%" height="100%"  muted loop>
+                    <source src="./video/Figma.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>              
+            </div>
+            <div class="fiche">
+                <a href="https://my.spline.design/pageaccueil-24818c2286099014bbbd9543f35dd376/" target="_blank">Les trois parfums</a>
+            </div>
+
+            <div class="fiche"> 
+
+                <video controls width="100%" height="100%"  muted loop>
+                    <source src="./video/spline.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+            </div>
+
+            <div class="fiche">  
+                <a href="https://sarov.webflow.io/" target="_blank">Webflow - Le site de Sarov</a>
+            </div>
+
+            <div class="fiche">
+                <video controls width="100%" height="100%"  muted loop>
+                    <source src="./video/Webflow.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+
+            </div>
+
+            <div class="fiche"> 
+                    <div class="texteCode"> 
+                        <h3>Extrait de code</h3>
+                        <p>
+                            Ma section de code a été mise de côté dans mon projet par manque de temps. Toutefois, je suis quand même fière d’avoir réussi à l’accomplir, surtout la partie JavaScript. 
+                        </p>
+                    </div>
+                <div class="imgCode"></div>
+            </div>
+
+            <div class="fiche">
+                <div></div>
+                <ul>
+                    <li class="positif">
+                        <p>Motivation</p>
+                    </li>
+                    <li class="positif">
+                        <p>Apprentissage agile</p>
+                    </li>
+                    <li class="positif">
+                        <p>Persévérante</p>
+                    </li>
+                    <li class="negatif">
+                        <p>Indécise</p>
+                    </li>
+                    <li class="negatif">
+                        <p>Procrastination</p>
+                    </li>
+                    <li class="negatif">
+                        <p>Exigence élevée</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fiche"></div>
+        </div>
+        <button class="fleche fleche-droite" onclick="prochaineFiche()">&#10095;</button>
+    </section>
+    
+
+
+<!-- Code javascript -->
+<script>
+    
+    //Fonction pour le bouton dans l'accueil scroll à la présentation
+    function ScrollPresentation(){
+        document.getElementById("Presentation").scrollIntoView({ behavior: "smooth" });
+    }
+
+    //Variables 
+    const fiches = document.querySelectorAll(".fiche");//recuperer les fiches
+    let nbFiche = 0; 
+
+    //Pour mise a jours de la fiche et ajouter / retirer CSS
+    function MAJFiche(){
+        fiches.forEach((fiche, i) => {
+            fiche.classList.remove("activeFiche");
+            if(i == nbFiche){
+                fiche.classList.add("activeFiche");
+            }
+        });
+    }
+
+    //Fonction pour passer la fiche prochaine et si elle arrive a la dernier elle recommence et on fait appel a la fonction MAJFiche. 
+    function prochaineFiche(){
+        nbFiche = (nbFiche + 1 ) % fiches.length; 
+        MAJFiche();
+    }
+    //Cette fonction permet de reveir a la fiche d'avant et si elle est la premiere, elle revien a la derniere et affiche la fiche avec MAJ fiche. 
+    function precedenteFiche(){
+        nbFiche = (nbFiche - 1 + fiches.length ) % fiches.length; 
+        MAJFiche();
+    }
+
+    //utilisation des fleche du clavier
+    document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowRight") {
+                prochaineFiche()
+            } else if (event.key === "ArrowLeft") {
+                precedenteFiche()
+            }
+        });
+        
+        
+    MAJFiche();
+</script>
+
+</body>
+</html>
